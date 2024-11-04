@@ -9,8 +9,9 @@ models: []
 language: [ "Particle Wiring", "Python" ]
 cloudServices: [ "Integrations", "Vault" ]
 hardwareDependencies:
-  - name: Particle Feather based MCU Development Boards (e.g., Argon, Boron)
+  - name: Particle MCU Development Board
     link: https://store.particle.io/collections/all-products?filter.p.product_type=Development%20Boards
+    tags: [ "Boron", "Argon", "M-SoM", "Photon 2", "Muon", "Monitor One", "Tracker One", "T-SoM", "E-SoM", "P2" ]
   - name: Grove Temperature & Humidity Sensor (DHT11)
     link: https://wiki.seeedstudio.com/Grove-TemperatureAndHumidity_Sensor/
   - name: Particle Grove Shield
