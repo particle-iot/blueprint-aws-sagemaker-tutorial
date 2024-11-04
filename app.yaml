@@ -1,0 +1,36 @@
+application:
+  name: "sagemaker-timeseries-forecasting-tutorial"
+  version: "1.0.0"
+  description: "AWS SageMaker Time-Series Forecasting tutorial for environmental monitoring"
+
+firmware:
+  target: [ "gen3", "gen4" ]
+  assets: []
+
+cloud:
+  integrations:
+    - name: "AWS SageMaker Timeseries Forecasting"
+      type: "webhook"
+      trigger: "env-data"
+      url: "https://sagemaker.<region>.amazonaws.com"
+      requestType: "POST"
+      headers:
+        Authorization: "Bearer $VAULT.AWS_SAGEMAKER_TOKEN"
+        Content-Type: "application/json"
+      body: |
+        {
+          "instance_type": "ml.t2.medium",
+          "data_source": "{{data_url}}",
+          "target_column": "temperature",
+          "forecast_horizon": 7,
+          "frequency": "M"
+        }
+
+vault:
+  secrets:
+    - name: "AWS_SAGEMAKER_TOKEN"
+      description: "Access token for AWS SageMaker API"
+    - name: "AWS_ACCESS_KEY_ID"
+      description: "AWS Access Key ID for programmatic access"
+    - name: "AWS_SECRET_ACCESS_KEY"
+      description: "AWS Secret Access Key for programmatic access"

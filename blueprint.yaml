@@ -1,0 +1,37 @@
+id: aws/sagemaker-timeseries-forecasting
+category: tutorial
+icon: aws.png
+gitrepo: https://github.com/particle-iot/blueprint-sagemaker-timeseries-forecasting
+name: "AWS SageMaker Tutorial"
+shortDescription: "Time-Series Forecasting with AWS SageMaker Autopilot"
+version: 1.0.0
+models: []
+language: [ "Particle Wiring", "Python" ]
+cloudServices: [ "Integrations", "Vault" ]
+hardwareDependencies:
+  - name: Particle Feather based MCU Development Boards (e.g., Argon, Boron)
+    link: https://store.particle.io/collections/all-products?filter.p.product_type=Development%20Boards
+  - name: Grove Temperature & Humidity Sensor (DHT11)
+    link: https://wiki.seeedstudio.com/Grove-TemperatureAndHumidity_Sensor/
+  - name: Particle Grove Shield
+    link: https://docs.particle.io/reference/datasheets/accessories/gen3-accessories/
+description: |
+  This AWS SageMaker Tutorial provides a step-by-step guide for performing time-series forecasting using AWS SageMaker Autopilot. 
+  The tutorial integrates with Particle devices, demonstrating how to collect and transmit environmental data from sensors, such 
+  as temperature and humidity readings, to AWS SageMaker for advanced forecasting. Leveraging SageMaker Autopilot's automated 
+  machine learning capabilities, users can predict future environmental trends, making it ideal for applications in weather 
+  prediction, industrial monitoring, and smart agriculture.
+
+  Key Topics Covered:
+  - Configuring Particle devices to capture time-series data from temperature and humidity sensors.
+  - Setting up secure data transmission to AWS SageMaker using cloud integrations and AWS Vault for managing credentials.
+  - Using AWS SageMaker Autopilot to automatically train and deploy a time-series forecasting model.
+  - Analyzing and visualizing forecasting results to gain insights from historical data.
+
+  Prerequisites:
+  - A Particle Feather-based development board (e.g., Argon, Boron).
+  - A Grove Temperature & Humidity Sensor and a Particle Grove Shield for seamless sensor connectivity.
+  - An AWS account with access to SageMaker services and permissions to create Autopilot jobs.
+
+  This tutorial provides a comprehensive example of combining IoT hardware with cloud-based machine learning, enabling users to 
+  easily collect data and generate actionable forecasts with minimal manual intervention.
