@@ -8,7 +8,7 @@ version: 1.0.0
 models: []
 language: [ "Particle Wiring", "Python" ]
 cloudServices: [ "Integrations", "Vault" ]
-integrations: [ ]
+integrations: [ "sagemaker" ]
 hardwareDependencies:
   - name: Particle MCU Development Board
     link: https://store.particle.io/collections/all-products?filter.p.product_type=Development%20Boards
