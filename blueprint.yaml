@@ -1,7 +1,7 @@
 id: aws/sagemaker-timeseries-forecasting
 category: tutorial
 icon: aws.png
-gitrepo: https://github.com/particle-iot/blueprint-sagemaker-timeseries-forecasting
+gitrepo: https://github.com/particle-iot/blueprint-aws-sagemaker-tutorial
 name: "AWS SageMaker Tutorial"
 shortDescription: "Time-Series Forecasting with AWS SageMaker Autopilot"
 version: 1.0.0
