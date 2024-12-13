@@ -1,22 +1,42 @@
 id: aws/sagemaker-timeseries-forecasting
-category: tutorial
-icon: aws.png
+slug: aws-sagemaker-timeseries-forecasting
+type: tutorial
+category: Getting started
+expertiseLevel: ""
+tags: ["sagemaker", "aws"]
+icon: assets/aws.png
 gitrepo: https://github.com/particle-iot/blueprint-aws-sagemaker-tutorial
 name: "AWS SageMaker tutorial"
 shortDescription: "Time-Series Forecasting with AWS SageMaker Autopilot"
 version: 1.0.0
 models: []
-language: [ "Particle Wiring", "Python" ]
-cloudServices: [ "Integrations", "Vault" ]
-integrations: [ "sagemaker" ]
+language: ["Particle Wiring", "Python" ]
+cloudServices:
+  - name: Integrations
+  - name: Secure variables
+integrations:
+  - name: sagemaker
+    icon: assets/sagemaker.svg
+supportedDevices:
+  - name: Boron
+  - name: Argon
+  - name: M-SoM
+  - name: Photon 2
+  - name: Muon
+  - name: Monitor One
+  - name: Tracker One
+  - name: T-SoM
+  - name: E-SoM
+  - name: P2
 hardwareDependencies:
-  - name: Particle MCU Development Board
-    link: https://store.particle.io/collections/all-products?filter.p.product_type=Development%20Boards
-    tags: [ "Boron", "Argon", "M-SoM", "Photon 2", "Muon", "Monitor One", "Tracker One", "T-SoM", "E-SoM", "P2" ]
+  - name: Supported device
   - name: Grove Temperature & Humidity Sensor (DHT11)
     link: https://wiki.seeedstudio.com/Grove-TemperatureAndHumidity_Sensor/
   - name: Particle Grove Shield
     link: https://docs.particle.io/reference/datasheets/accessories/gen3-accessories/
+introduction: |
+  This tutorial demonstrates how to set up time-series forecasting using AWS SageMaker with environmental data collected from Particle devices. Using the Grove Temperature & Humidity Sensor and AWS SageMaker's automated machine learning capabilities, you can predict future environmental trends based on temperature and humidity data. This is useful for applications such as weather prediction, industrial monitoring, and smart agriculture.
+
 description: |
   This AWS SageMaker Tutorial provides a step-by-step guide for performing time-series forecasting using AWS SageMaker Autopilot. 
   The tutorial integrates with Particle devices, demonstrating how to collect and transmit environmental data from sensors, such 
@@ -37,3 +57,7 @@ description: |
 
   This tutorial provides a comprehensive example of combining IoT hardware with cloud-based machine learning, enabling users to 
   easily collect data and generate actionable forecasts with minimal manual intervention.
+
+additionalResources:
+  - name: Device datasheets
+    link: https://docs.particle.io/reference/datasheets
