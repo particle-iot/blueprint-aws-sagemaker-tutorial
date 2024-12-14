@@ -1,7 +1,7 @@
 id: aws/sagemaker-timeseries-forecasting
 slug: aws-sagemaker-timeseries-forecasting
 type: tutorial
-category: Getting started
+category: AI and machine learning
 expertiseLevel: ""
 tags: ["sagemaker", "aws"]
 icon: assets/aws.png
