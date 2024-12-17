@@ -1,8 +1,7 @@
-id: aws/sagemaker-timeseries-forecasting
 slug: aws-sagemaker-timeseries-forecasting
 type: tutorial
 category: AI and machine learning
-expertiseLevel: ""
+expertiseLevel: "intermediate"
 tags: ["sagemaker", "aws"]
 icon: assets/aws.png
 gitrepo: https://github.com/particle-iot/blueprint-aws-sagemaker-tutorial
