@@ -14,7 +14,7 @@ cloudServices:
   - name: Integrations
   - name: Secure variables
 integrations:
-  - name: sagemaker
+  - name: Sagemaker
     icon: assets/azure-sagemaker.svg
 supportedDevices:
   - name: Boron
