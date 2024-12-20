@@ -15,18 +15,16 @@ To complete this tutorial, you will need:
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Prerequisites](#prerequisites)
-- [Setup Steps](#setup-steps)
-  - [1. Configure the Hardware](#1-configure-the-hardware)
-  - [2. Configure the Particle Cloud](#2-configure-the-particle-cloud)
-  - [3. Set Up AWS SageMaker Integration](#3-set-up-aws-sagemaker-integration)
-  - [4. Deploy and Test](#4-deploy-and-test)
-- [Application Details](#application-details)
-  - [Cloud Logic](#cloud-logic)
-  - [Configuration in Ledger](#configuration-in-ledger)
-  - [AWS SageMaker Integration](#aws-sagemaker-integration)
-- [Conclusion](#conclusion)
+- [AWS SageMaker Time-Series Forecasting Tutorial](#aws-sagemaker-time-series-forecasting-tutorial)
+  - [Overview](#overview)
+  - [Prerequisites](#prerequisites)
+  - [Table of Contents](#table-of-contents)
+  - [Setup Steps](#setup-steps)
+    - [1. Configure the Hardware](#1-configure-the-hardware)
+    - [2. Set Up AWS SageMaker Integration](#2-set-up-aws-sagemaker-integration)
+    - [3. Configure the Particle Cloud](#3-configure-the-particle-cloud)
+    - [4. Deploy and Test](#4-deploy-and-test)
+    - [AWS SageMaker Integration](#aws-sagemaker-integration)
 
 ## Setup Steps
 
@@ -36,18 +34,36 @@ To complete this tutorial, you will need:
 2. Connect the Grove Shield to your Particle device (e.g., Argon or Boron).
 3. Set up your Particle device in the Particle Console to ensure it is online and ready to transmit data.
 
-### 2. Configure the Particle Cloud
+### 2. Set Up AWS SageMaker Integration
 
-1. In the **Particle Console**, navigate to your device's product and open the **Integrations** section.
-2. Use the `app.yaml` configuration file provided in this repository to set up the necessary **Cloud Logic**, **Ledger Configuration**, and **Integrations**.
-3. Deploy the `process_temperature_data.js` function to process the temperature data in the cloud.
-
-### 3. Set Up AWS SageMaker Integration
-
-1. In the `app.yaml` file, configure the **AWS SageMaker Timeseries Forecasting** integration:
-   - Set up the **AWS region** and **data source URL** for the integration.
+1. In the **AWS Management Console**, set up **AWS SageMaker Timeseries Forecasting**.
+   - Take note of the **AWS region** and **data source URL** for the integration.
    - Define the target column for forecasting (`temperature`) and the forecast horizon.
-2. Securely store your AWS credentials (`AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`) and the SageMaker access token (`AWS_SAGEMAKER_TOKEN`) in **Vault**.
+2. Note your SageMaker access token (`AWS_SAGEMAKER_TOKEN`) for use in the next step.
+
+### 3. Configure the Particle Cloud
+
+1.  In the **Particle Console**, navigate to your device's product
+2.  Add the following integration:
+  - Name: AWS SageMaker Timeseries Forecasting
+  - Type: Webhook
+  - Event name: env-data
+  - URL: `https://sagemaker.<region>.amazonaws.com`
+  - Request method: POST
+  - Request format: JSON
+  - Request body:
+  ```
+    {
+    "instance_type": "ml.t2.medium",
+    "data_source": "{{data_url}}",
+    "target_column": "temperature",
+    "forecast_horizon": 7,
+    "frequency": "M"
+  }
+  ```
+  - Headers:
+    - Authorization: "Bearer AWS_SAGEMAKER_TOKEN"
+3. Add a Logic Function using the code from `process_temperature_data.js` to process the temperature data in the cloud.
 
 ### 4. Deploy and Test
 
