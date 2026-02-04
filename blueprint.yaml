@@ -2,20 +2,16 @@ slug: aws-sagemaker-timeseries-forecasting
 type: Tutorial
 category: AI and machine learning
 expertiseLevel: "Intermediate"
-tags: ["AWS", "AI", "ML", "Time series", "Insights"]
+tags: ["AI/ML", "Time Series", "Sensors"]
 icon: assets/azure-sagemaker-tutorial.svg
 gitrepo: https://github.com/particle-iot/blueprint-aws-sagemaker-tutorial
 name: "AWS SageMaker tutorial"
 shortDescription: "Time-Series Forecasting with AWS SageMaker Autopilot"
 version: 1.0.0
 models: []
-language: ["Particle Wiring", "Python" ]
-cloudServices:
-  - name: Integrations
-  - name: Secure variables
-integrations:
-  - name: Sagemaker
-    icon: assets/azure-sagemaker.svg
+language: ["C++", "Python"]
+cloudServices: ["AWS SageMaker"]
+integrations: ["Webhook", "Cloud Secrets"]
 supportedDevices:
   - name: Boron
   - name: Argon
