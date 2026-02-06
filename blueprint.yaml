@@ -54,5 +54,5 @@ description: |
   easily collect data and generate actionable forecasts with minimal manual intervention.
 
 additionalResources:
-  - name: Device datasheets
+  - title: Device datasheets
     link: https://docs.particle.io/reference/datasheets
